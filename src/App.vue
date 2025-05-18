@@ -26,8 +26,9 @@
         <img :src="selectedUser.picture.large" />
         <p><strong>Email:</strong> {{ selectedUser.email }}</p>
         <p><strong>Phone:</strong> {{ selectedUser.phone }}</p>
+        <p><strong>Country:</strong> {{ selectedUser.location.country }}</p>
         <p><strong>City:</strong> {{ selectedUser.location.city }}</p>
-        <p><strong>Date :</strong> {{ selectedUser.location.city }}</p>
+        <p><strong>age :</strong> {{ selectedUser.dob.age }}</p>
       </div>
     </div>
   </div>
