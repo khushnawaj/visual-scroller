@@ -14,17 +14,9 @@
 
     <p class="user-count">Found {{ filteredUsers.length }} users</p>
 
-    <VirtualList
-      v-if="filteredUsers && filteredUsers.length"
-      :items="filteredUsers"
-      :itemHeight="isCardView ? 150 : 90"
-      :visibleCount="10"
-      :buffer="5"
-      :cardView="isCardView"
-      :favorites="favorites"
-      @toggle-favorite="toggleFavorite"
-      @select="selectedUser = $event"
-    />
+    <VirtualList v-if="filteredUsers && filteredUsers.length" :items="filteredUsers" :itemHeight="isCardView ? 150 : 90"
+      :visibleCount="10" :buffer="5" :cardView="isCardView" :favorites="favorites" @toggle-favorite="toggleFavorite"
+      @select="selectedUser = $event" />
 
     <button class="scroll-top" @click="scrollToTop">↑ Top</button>
 
@@ -35,6 +27,7 @@
         <p><strong>Email:</strong> {{ selectedUser.email }}</p>
         <p><strong>Phone:</strong> {{ selectedUser.phone }}</p>
         <p><strong>City:</strong> {{ selectedUser.location.city }}</p>
+        <p><strong>Date :</strong> {{ selectedUser.location.city }}</p>
       </div>
     </div>
   </div>
@@ -111,16 +104,19 @@ export default {
   background-color: #f5fff5;
   font-family: 'Segoe UI', sans-serif;
 }
+
 h2 {
   color: #22543d;
   margin-bottom: 10px;
 }
+
 .controls {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
 }
+
 .controls input,
 .controls select,
 .controls button {
@@ -128,10 +124,12 @@ h2 {
   border-radius: 8px;
   border: 1px solid #ccc;
 }
+
 .user-count {
   color: #22543d;
   margin-bottom: 5px;
 }
+
 .scroll-top {
   margin-top: 10px;
   padding: 6px 12px;
@@ -141,9 +139,11 @@ h2 {
   border-radius: 8px;
   cursor: pointer;
 }
+
 .scroll-top:hover {
   background-color: #1b3a2e;
 }
+
 .modal {
   position: fixed;
   inset: 0;
@@ -152,12 +152,14 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+
 .modal-content {
   background: white;
   padding: 20px;
   border-radius: 12px;
   text-align: center;
 }
+
 .modal-content img {
   width: 100px;
   border-radius: 50%;
