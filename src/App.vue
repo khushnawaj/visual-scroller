@@ -8,6 +8,7 @@
         <option value="name">Name</option>
         <option value="email">Email</option>
         <option value="city">City</option>
+        <option value="city">Country</option>
       </select>
       <button @click="toggleView">{{ isCardView ? 'List View' : 'Card View' }}</button>
     </div>
